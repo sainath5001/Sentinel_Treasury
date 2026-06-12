@@ -2,6 +2,7 @@
 
 import { Bot, ShieldCheck, UserCheck, FileSearch } from "lucide-react";
 import { DashboardShell } from "@/components/layout/DashboardShell";
+import { AgentChatPanel } from "@/components/agents/AgentChatPanel";
 import { CreatePaymentForm } from "@/components/agents/CreatePaymentForm";
 import { AgentActivityFeed } from "@/components/agents/AgentActivityFeed";
 import { ApprovalCenter } from "@/components/treasury/ApprovalCenter";
@@ -63,9 +64,13 @@ export default function AgentsPage() {
         ))}
       </div>
 
+      <div className="grid gap-6 lg:grid-cols-2 mb-6">
+        <AgentChatPanel />
+        <AgentActivityFeed limit={10} />
+      </div>
+
       <div className="grid gap-6 lg:grid-cols-2">
         <CreatePaymentForm />
-        <AgentActivityFeed limit={10} />
       </div>
 
       <div className="mt-6">
