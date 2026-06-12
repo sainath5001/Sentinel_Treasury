@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { t3PipelineTrailSchema } from "@/types/terminal3";
 
 // ---------------------------------------------------------------------------
 // Treasury Agent
@@ -101,6 +102,7 @@ export const orchestrateResponseSchema = z.object({
   audit: auditRecordSchema,
   pipelineStatus: z.enum(["completed", "rejected", "needs_clarification", "escalated"]),
   message: z.string(),
+  t3: t3PipelineTrailSchema.optional(),
 });
 
 export type OrchestrateResponse = z.infer<typeof orchestrateResponseSchema>;

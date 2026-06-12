@@ -1,0 +1,13 @@
+{
+  "name": "Sentinel Compliance Agent",
+  "description": "Validates payment proposals against treasury policies, limits, and vault balance.",
+  "did": "did:t3n:compliance-agent-sentinel",
+  "role": "COMPLIANCE_ROLE",
+  "version": "1.0.0",
+  "capabilities": ["RECORD_COMPLIANCE", "READ_TREASURY_STATE"],
+  "url": "https://sentinel-treasury.io/agents/compliance",
+  "provider": {
+    "organization": "Sentinel Treasury",
+    "url": "https://sentinel-treasury.io"
+  }
+}

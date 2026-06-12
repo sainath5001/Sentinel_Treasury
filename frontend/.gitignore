@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# T3 agent identity secrets (keep .example templates)
+config/agents/*.identity.json
+
 # vercel
 .vercel
 

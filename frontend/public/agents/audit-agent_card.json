@@ -1,0 +1,13 @@
+{
+  "name": "Sentinel Audit Agent",
+  "description": "Generates immutable audit records and compliance reports for all treasury actions.",
+  "did": "did:t3n:audit-agent-sentinel",
+  "role": "AUDIT",
+  "version": "1.0.0",
+  "capabilities": ["ANCHOR_AUDIT", "READ_TREASURY_STATE"],
+  "url": "https://sentinel-treasury.io/agents/audit",
+  "provider": {
+    "organization": "Sentinel Treasury",
+    "url": "https://sentinel-treasury.io"
+  }
+}

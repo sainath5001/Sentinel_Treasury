@@ -6,6 +6,7 @@ import { CONTRACTS, CHAIN } from "@/config/contracts";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { shortenAddress } from "@/lib/utils";
+import { T3DelegationPanel } from "@/components/terminal3/T3DelegationPanel";
 
 export default function SettingsPage() {
   const { address, isConnected, roles } = useUserRoles();
@@ -59,6 +60,10 @@ export default function SettingsPage() {
             )}
           </CardContent>
         </Card>
+
+        <div className="lg:col-span-2">
+          <T3DelegationPanel />
+        </div>
 
         <Card className="lg:col-span-2">
           <CardHeader>

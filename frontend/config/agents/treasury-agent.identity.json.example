@@ -1,0 +1,9 @@
+{
+  "did": "did:t3n:treasury-agent-sentinel",
+  "role": "TREASURY",
+  "agentUri": "https://your-app.vercel.app/agents/treasury-agent_card.json",
+  "evmAddress": "0x0000000000000000000000000000000000000000",
+  "publicKey": "REPLACE_WITH_AGENT_PUBLIC_KEY",
+  "permissions": ["CREATE_PAYMENT_REQUEST", "READ_TREASURY_STATE"],
+  "registeredAt": "2026-06-12T00:00:00.000Z"
+}

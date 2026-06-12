@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { useAgentOrchestrator } from "@/hooks/useAgentOrchestrator";
 import { useTreasuryActions } from "@/hooks/useTreasuryActions";
 import type { OrchestrateResponse } from "@/types/agents";
+import { AgentIdentityBadge } from "@/components/terminal3/AgentIdentityBadge";
 
 const EXAMPLE_PROMPTS = [
   "Pay Rahul 50 STT for invoice #1042",
@@ -48,7 +49,7 @@ export function AgentChatPanel() {
           <div>
             <CardTitle>AI Agent Console</CardTitle>
             <CardDescription>
-              Natural language → 4-agent pipeline (GPT-4.1)
+              Natural language → T3-protected 4-agent pipeline (GPT-4.1)
             </CardDescription>
           </div>
         </div>
@@ -104,8 +105,19 @@ export function AgentChatPanel() {
               </Badge>
             </div>
 
-            <AgentStep
+            {result.t3 && (
+              <div className="flex items-center justify-between rounded-lg border border-cyan-500/20 bg-cyan-500/5 px-3 py-2">
+                <span className="text-xs text-cyan-300">Terminal 3 Trail</span>
+                <Badge variant={result.t3.allVerified ? "success" : "warning"}>
+                  {result.t3.allVerified ? "All verified" : "Partial"}
+                </Badge>
+              </div>
+            )}
+
+            <T3AgentStep
               title="Treasury Agent"
+              stepKey="treasury"
+              t3={result.t3}
               content={
                 result.proposal.parseable
                   ? `${result.proposal.amount} ${result.proposal.tokenSymbol} → ${result.proposal.recipientName} (${result.proposal.recipientAddress ?? "unresolved"})`
@@ -113,20 +125,26 @@ export function AgentChatPanel() {
               }
             />
 
-            <AgentStep
+            <T3AgentStep
               title="Compliance Agent"
+              stepKey="compliance"
+              t3={result.t3}
               content={result.compliance.summary}
               badge={result.compliance.passed ? "pass" : "fail"}
             />
 
-            <AgentStep
+            <T3AgentStep
               title="Approval Agent"
+              stepKey="approval"
+              t3={result.t3}
               content={result.approval.approvalSummary || result.approval.reason}
               badge={result.approval.decision}
             />
 
-            <AgentStep
+            <T3AgentStep
               title="Audit Agent"
+              stepKey="audit"
+              t3={result.t3}
               content={result.audit.summary}
               sub={`Hash: ${result.audit.auditHash.slice(0, 18)}…`}
             />
@@ -149,17 +167,23 @@ export function AgentChatPanel() {
   );
 }
 
-function AgentStep({
+function T3AgentStep({
   title,
+  stepKey,
+  t3,
   content,
   badge,
   sub,
 }: {
   title: string;
+  stepKey: string;
+  t3?: OrchestrateResponse["t3"];
   content: string;
   badge?: string;
   sub?: string;
 }) {
+  const attestation = t3?.attestations.find((a) => a.agentId === stepKey);
+
   return (
     <div className="rounded-lg border border-slate-800/80 p-3">
       <div className="flex items-center justify-between gap-2">
@@ -170,8 +194,18 @@ function AgentStep({
           </Badge>
         )}
       </div>
+      {attestation && (
+        <div className="mt-2">
+          <AgentIdentityBadge did={attestation.agentDid} verified={attestation.verified} />
+        </div>
+      )}
       <p className="mt-1 text-sm text-slate-300">{content}</p>
       {sub && <p className="mt-1 font-mono text-xs text-slate-500">{sub}</p>}
+      {attestation && (
+        <p className="mt-1 font-mono text-[10px] text-slate-600">
+          T3 action: {attestation.action} · {attestation.actionId}
+        </p>
+      )}
     </div>
   );
 }

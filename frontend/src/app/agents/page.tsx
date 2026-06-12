@@ -8,6 +8,8 @@ import { AgentActivityFeed } from "@/components/agents/AgentActivityFeed";
 import { ApprovalCenter } from "@/components/treasury/ApprovalCenter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { AgentIdentityBadge } from "@/components/terminal3/AgentIdentityBadge";
+import { AGENT_REGISTRY } from "@/config/agents";
 
 const AGENTS = [
   {
@@ -58,7 +60,21 @@ export default function AgentsPage() {
             </CardHeader>
             <CardContent>
               <Badge variant="info">{agent.role}</Badge>
-              <p className="mt-2 text-xs text-slate-500">did:t3n:…{agent.name.toLowerCase().replace(" ", "-")}</p>
+              <div className="mt-2">
+                <AgentIdentityBadge
+                  did={
+                    AGENT_REGISTRY[
+                      agent.name.includes("Treasury")
+                        ? "treasury"
+                        : agent.name.includes("Compliance")
+                          ? "compliance"
+                          : agent.name.includes("Approval")
+                            ? "approval"
+                            : "audit"
+                    ].did
+                  }
+                />
+              </div>
             </CardContent>
           </Card>
         ))}
