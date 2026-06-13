@@ -7,6 +7,7 @@ import {
   ClipboardList,
   FileSearch,
   LayoutDashboard,
+  Play,
   Settings,
   Shield,
   Vault,
@@ -19,6 +20,7 @@ const navItems = [
   { href: "/treasury", label: "Treasury Overview", icon: Vault },
   { href: "/requests", label: "Payment Requests", icon: ClipboardList },
   { href: "/audit", label: "Audit Center", icon: FileSearch },
+  { href: "/demo", label: "Demo Kit", icon: Play, external: false },
   { href: "/settings", label: "Settings", icon: Settings },
 ];
 
@@ -58,7 +60,13 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="border-t border-slate-800/80 p-4">
+      <div className="border-t border-slate-800/80 p-4 space-y-3">
+        <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
+          <p className="text-xs font-medium text-cyan-400">Terminal 3</p>
+          <p className="mt-1 text-[10px] text-slate-400 leading-relaxed">
+            Identity → Authorization → Protected Action → Audit
+          </p>
+        </div>
         <div className="rounded-lg border border-slate-800 bg-slate-900/50 p-3">
           <p className="text-xs font-medium text-slate-400">Network</p>
           <p className="mt-1 text-sm text-slate-200">Ethereum Sepolia</p>

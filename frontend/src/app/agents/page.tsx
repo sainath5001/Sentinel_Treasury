@@ -9,6 +9,9 @@ import { ApprovalCenter } from "@/components/treasury/ApprovalCenter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { AgentIdentityBadge } from "@/components/terminal3/AgentIdentityBadge";
+import { AgentTransparencyCard } from "@/components/agents/AgentTransparencyCard";
+import { ProtectedActionFlow } from "@/components/terminal3/ProtectedActionFlow";
+import { T3TrustBanner } from "@/components/terminal3/T3TrustBanner";
 import { AGENT_REGISTRY } from "@/config/agents";
 
 const AGENTS = [
@@ -48,6 +51,8 @@ export default function AgentsPage() {
       title="Agent Workspace"
       description="Multi-agent treasury operations with Terminal 3 identity"
     >
+      <T3TrustBanner />
+
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-6">
         {AGENTS.map((agent) => (
           <Card key={agent.name}>
@@ -82,10 +87,14 @@ export default function AgentsPage() {
 
       <div className="grid gap-6 lg:grid-cols-2 mb-6">
         <AgentChatPanel />
-        <AgentActivityFeed limit={10} />
+        <div className="space-y-6">
+          <AgentTransparencyCard />
+          <AgentActivityFeed limit={10} />
+        </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2 mb-6">
+        <ProtectedActionFlow />
         <CreatePaymentForm />
       </div>
 

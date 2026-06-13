@@ -3,7 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Bot, ClipboardList, FileSearch, LayoutDashboard, Settings, Shield, Vault, X } from "lucide-react";
+import { Bot, ClipboardList, FileSearch, LayoutDashboard, Play, Settings, Shield, Vault, X } from "lucide-react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
 import { cn } from "@/lib/utils";
@@ -14,6 +14,7 @@ const mobileNav = [
   { href: "/treasury", label: "Treasury", icon: Vault },
   { href: "/requests", label: "Requests", icon: ClipboardList },
   { href: "/audit", label: "Audit", icon: FileSearch },
+  { href: "/demo", label: "Demo", icon: Play },
   { href: "/settings", label: "Settings", icon: Settings },
 ];
 

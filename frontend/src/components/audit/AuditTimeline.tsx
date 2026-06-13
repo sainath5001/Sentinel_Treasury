@@ -70,7 +70,10 @@ export function AuditTimeline() {
     <Card>
       <CardHeader>
         <CardTitle>Audit Timeline</CardTitle>
-        <CardDescription>Immutable event trail reconstructed from contract state</CardDescription>
+        <CardDescription>
+          Immutable event trail reconstructed from on-chain contract state. Each lifecycle
+          transition maps to an agent action with T3 attestation metadata in the orchestrate trail.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         {sorted.length === 0 ? (
@@ -88,6 +91,9 @@ export function AuditTimeline() {
                   </div>
                   <p className="mt-2 text-sm text-slate-300">{event.description}</p>
                   <p className="mt-2 text-xs text-slate-500">{event.timestamp.toLocaleString()}</p>
+                  <p className="mt-1 text-[10px] text-emerald-400/80">
+                    Verifiable via Sepolia TreasuryManager · Request #{event.requestId}
+                  </p>
                 </div>
               </div>
             ))}

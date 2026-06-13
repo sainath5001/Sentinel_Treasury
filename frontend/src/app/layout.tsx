@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sentinel Treasury",
-  description: "Enterprise autonomous treasury platform with verifiable AI agents",
+  title: "Sentinel Treasury | Enterprise AI Treasury with Terminal 3",
+  description:
+    "Autonomous enterprise treasury powered by GPT-4.1 multi-agent pipeline and Terminal 3 verifiable identity, delegation, and audit. Live on Ethereum Sepolia.",
+  keywords: ["Terminal 3", "AI agents", "treasury", "enterprise", "Sepolia", "delegation"],
 };
 
 export default function RootLayout({

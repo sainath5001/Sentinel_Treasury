@@ -102,6 +102,7 @@ export const orchestrateResponseSchema = z.object({
   audit: auditRecordSchema,
   pipelineStatus: z.enum(["completed", "rejected", "needs_clarification", "escalated"]),
   message: z.string(),
+  agentMode: z.enum(["live", "demo"]).optional(),
   t3: t3PipelineTrailSchema.optional(),
 });
 

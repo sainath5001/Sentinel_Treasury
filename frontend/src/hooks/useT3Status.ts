@@ -11,6 +11,14 @@ export interface T3StatusResponse {
   agents: AgentRegistryEntry[];
   identities: T3AgentIdentity[];
   delegations: T3DelegationRecord[];
+  network?: {
+    connected: boolean;
+    ownerDid?: string;
+    nodeUrl?: string;
+    ethAddress?: string;
+    authenticated?: boolean;
+    usage?: { balance: unknown; entryCount: number } | null;
+  };
 }
 
 export function useT3Status() {
