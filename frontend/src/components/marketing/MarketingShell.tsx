@@ -4,7 +4,7 @@ import { MarketingFooter } from "@/components/marketing/MarketingFooter";
 
 export function MarketingShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-[#070B14]">
+    <div className="min-h-screen bg-black">
       <MarketingNav />
       <main>{children}</main>
       <MarketingFooter />

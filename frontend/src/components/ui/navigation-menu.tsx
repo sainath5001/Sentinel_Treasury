@@ -57,7 +57,7 @@ function NavigationMenuItem({
 }
 
 const navigationMenuTriggerStyle = cva(
-  'cursor-pointer group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800/80 hover:text-slate-100 focus:bg-slate-800/80 focus:text-slate-100 disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-cyan-500/10 data-[state=open]:bg-cyan-500/10 data-[active=true]:text-cyan-300 data-[state=open]:text-cyan-300 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/40',
+  'cursor-pointer group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-violet-500/10 hover:text-violet-200 focus:bg-violet-500/10 focus:text-violet-200 disabled:pointer-events-none disabled:opacity-50 data-[active=true]:bg-violet-500/10 data-[state=open]:bg-violet-500/10 data-[active=true]:text-violet-300 data-[state=open]:text-violet-300 outline-none focus-visible:ring-2 focus-visible:ring-violet-500/40',
 );
 
 function NavigationMenuTrigger({
@@ -89,7 +89,7 @@ function NavigationMenuContent({
       data-slot="navigation-menu-content"
       className={cn(
         'data-[motion^=from-]:animate-in data-[motion^=to-]:animate-out data-[motion^=from-]:fade-in data-[motion^=to-]:fade-out data-[motion=from-end]:slide-in-from-right-52 data-[motion=from-start]:slide-in-from-left-52 data-[motion=to-end]:slide-out-to-right-52 data-[motion=to-start]:slide-out-to-left-52 top-0 left-0 w-full p-2 pr-2.5 md:absolute md:w-auto',
-        'group-data-[viewport=false]/navigation-menu:bg-popover group-data-[viewport=false]/navigation-menu:text-popover-foreground group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:border-slate-800 group-data-[viewport=false]/navigation-menu:shadow-xl group-data-[viewport=false]/navigation-menu:duration-200',
+        'group-data-[viewport=false]/navigation-menu:bg-black/90 group-data-[viewport=false]/navigation-menu:text-slate-100 group-data-[viewport=false]/navigation-menu:data-[state=open]:animate-in group-data-[viewport=false]/navigation-menu:data-[state=closed]:animate-out group-data-[viewport=false]/navigation-menu:data-[state=closed]:zoom-out-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:zoom-in-95 group-data-[viewport=false]/navigation-menu:data-[state=open]:fade-in-0 group-data-[viewport=false]/navigation-menu:data-[state=closed]:fade-out-0 group-data-[viewport=false]/navigation-menu:top-full group-data-[viewport=false]/navigation-menu:mt-1.5 group-data-[viewport=false]/navigation-menu:overflow-hidden group-data-[viewport=false]/navigation-menu:rounded-md group-data-[viewport=false]/navigation-menu:border group-data-[viewport=false]/navigation-menu:border-violet-500/20 group-data-[viewport=false]/navigation-menu:shadow-xl group-data-[viewport=false]/navigation-menu:shadow-violet-500/5 group-data-[viewport=false]/navigation-menu:backdrop-blur-md group-data-[viewport=false]/navigation-menu:duration-200',
         className,
       )}
       {...props}
@@ -106,7 +106,7 @@ function NavigationMenuViewport({
       <NavigationMenuPrimitive.Viewport
         data-slot="navigation-menu-viewport"
         className={cn(
-          'origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-slate-800 bg-slate-950 text-slate-100 shadow-xl shadow-black/20 md:w-[var(--radix-navigation-menu-viewport-width)]',
+          'origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-violet-500/20 bg-black/90 text-slate-100 shadow-xl shadow-violet-500/5 backdrop-blur-md md:w-[var(--radix-navigation-menu-viewport-width)]',
           'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
           className,
         )}
@@ -124,7 +124,7 @@ function NavigationMenuLink({
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
       className={cn(
-        'flex flex-col gap-1 rounded-md p-2 text-sm transition-colors hover:bg-slate-800/80 hover:text-slate-100 focus:bg-slate-800/80 focus:text-slate-100 data-[active=true]:bg-cyan-500/10 data-[active=true]:text-cyan-300 outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/40',
+        'flex flex-col gap-1 rounded-md p-2 text-sm transition-colors hover:bg-violet-500/10 hover:text-violet-200 focus:bg-violet-500/10 focus:text-violet-200 data-[active=true]:bg-violet-500/10 data-[active=true]:text-violet-300 outline-none focus-visible:ring-2 focus-visible:ring-violet-500/40',
         className,
       )}
       {...props}

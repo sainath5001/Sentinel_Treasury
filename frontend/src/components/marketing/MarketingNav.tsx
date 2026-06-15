@@ -82,7 +82,7 @@ function ListItem({
       <NavigationMenuLink asChild>
         <Link
           href={href}
-          className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-800/80 hover:text-cyan-300 focus:bg-slate-800/80"
+          className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-violet-500/10 hover:text-violet-200 focus:bg-violet-500/10"
         >
           <div className="text-sm font-medium leading-none text-slate-100">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-slate-500 mt-1.5">{children}</p>
@@ -97,11 +97,11 @@ export function MarketingNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-[#070B14]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-violet-500/10 bg-black/70 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10">
-            <Shield className="h-5 w-5 text-cyan-400" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-violet-500/30 bg-violet-500/10">
+            <Shield className="h-5 w-5 text-violet-300" />
           </div>
           <div className="hidden sm:block">
             <p className="text-sm font-semibold text-slate-50">Sentinel Treasury</p>
@@ -118,10 +118,10 @@ export function MarketingNav() {
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
                       <Link
-                        className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b from-cyan-500/10 to-slate-900/80 border border-cyan-500/20 p-6 no-underline outline-none select-none hover:border-cyan-500/40 transition-colors"
+                        className="flex h-full w-full flex-col justify-end rounded-md border border-violet-500/20 bg-gradient-to-b from-violet-500/10 to-black/80 p-6 no-underline outline-none select-none transition-colors hover:border-violet-500/40"
                         href="/"
                       >
-                        <Shield className="h-8 w-8 text-cyan-400 mb-3" />
+                        <Shield className="h-8 w-8 text-violet-300 mb-3" />
                         <div className="mb-2 text-lg font-medium text-slate-100">
                           Sentinel Treasury
                         </div>
@@ -167,9 +167,9 @@ export function MarketingNav() {
                       <NavigationMenuLink asChild>
                         <Link
                           href={href}
-                          className="flex items-start gap-3 rounded-md p-3 hover:bg-slate-800/80 transition-colors"
+                          className="flex items-start gap-3 rounded-md p-3 transition-colors hover:bg-violet-500/10"
                         >
-                          <Icon className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400" />
+                          <Icon className="mt-0.5 h-4 w-4 shrink-0 text-violet-300" />
                           <div>
                             <div className="text-sm font-medium text-slate-100">{title}</div>
                             <p className="text-xs text-slate-500 mt-0.5">{description}</p>
@@ -188,7 +188,7 @@ export function MarketingNav() {
                   href="/demo"
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    pathname === "/demo" && "bg-cyan-500/10 text-cyan-300",
+                    pathname === "/demo" && "bg-violet-500/10 text-violet-300",
                   )}
                 >
                   <span className="flex items-center gap-1.5">
@@ -202,17 +202,26 @@ export function MarketingNav() {
         </NavigationMenu>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button variant="outline" size="sm" asChild>
-            <Link href="/dashboard">Open App</Link>
+          <Button
+            variant="outline"
+            size="sm"
+            asChild
+            className="border-slate-600 bg-black/50 text-slate-100 backdrop-blur-sm hover:bg-slate-900"
+          >
+            <Link href="/dashboard">Open Dashboard</Link>
           </Button>
-          <Button size="sm" asChild>
-            <Link href="/demo">Live Demo</Link>
+          <Button
+            size="sm"
+            asChild
+            className="border-0 bg-[#BF80FF] text-slate-950 shadow-md shadow-violet-500/20 hover:bg-[#C896FF]"
+          >
+            <Link href="/demo">Start Live Demo</Link>
           </Button>
         </div>
 
         <button
           type="button"
-          className="lg:hidden text-slate-400"
+          className="text-violet-300/80 lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -221,7 +230,7 @@ export function MarketingNav() {
       </div>
 
       {open && (
-        <div className="border-t border-slate-800 px-4 py-4 lg:hidden">
+        <div className="border-t border-violet-500/10 bg-black/90 px-4 py-4 backdrop-blur-md lg:hidden">
           <nav className="space-y-1">
             <p className="px-3 py-1 text-[10px] uppercase tracking-wider text-slate-600">Product</p>
             {productLinks.map(({ href, title }) => (
@@ -231,7 +240,7 @@ export function MarketingNav() {
                 onClick={() => setOpen(false)}
                 className={cn(
                   "block rounded-lg px-3 py-2 text-sm",
-                  pathname === href ? "bg-cyan-500/10 text-cyan-300" : "text-slate-300",
+                  pathname === href ? "bg-violet-500/10 text-violet-300" : "text-slate-300",
                 )}
               >
                 {title}
@@ -243,18 +252,32 @@ export function MarketingNav() {
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-2 text-sm text-slate-300"
+                className="block rounded-lg px-3 py-2 text-sm text-slate-300 hover:bg-violet-500/10 hover:text-violet-200"
               >
                 {title}
               </Link>
             ))}
-            <Link
-              href="/dashboard"
-              onClick={() => setOpen(false)}
-              className="block rounded-lg px-3 py-2 text-sm text-cyan-400"
-            >
-              Open App →
-            </Link>
+            <div className="mt-3 flex flex-col gap-2 px-3 pt-2">
+              <Button
+                size="sm"
+                asChild
+                className="w-full border-0 bg-[#BF80FF] text-slate-950 hover:bg-[#C896FF]"
+              >
+                <Link href="/demo" onClick={() => setOpen(false)}>
+                  Start Live Demo
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                asChild
+                className="w-full border-slate-600 bg-black/50 text-slate-100 hover:bg-slate-900"
+              >
+                <Link href="/dashboard" onClick={() => setOpen(false)}>
+                  Open Dashboard
+                </Link>
+              </Button>
+            </div>
           </nav>
         </div>
       )}
