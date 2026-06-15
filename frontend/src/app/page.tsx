@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, Bot, Fingerprint, Shield, Vault } from "lucide-react";
+import { Bot, Shield, Vault } from "lucide-react";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
 import { TrustStrip } from "@/components/marketing/TrustStrip";
 import { PipelineDiagram } from "@/components/marketing/PipelineDiagram";
+import { AetherFlowHero } from "@/components/ui/aether-flow-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PLATFORM_FEATURES } from "@/content/features";
@@ -10,37 +11,11 @@ import { PLATFORM_FEATURES } from "@/content/features";
 export default function LandingPage() {
   return (
     <MarketingShell>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(34,211,238,0.08)_0%,_transparent_60%)]" />
-        <div className="relative mx-auto max-w-6xl px-4 py-20 lg:px-8 lg:py-28">
-          <div className="max-w-3xl">
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs text-cyan-300">
-              <Fingerprint className="h-3.5 w-3.5" />
-              Powered by Terminal 3 Agent Identity
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight text-slate-50 sm:text-5xl lg:text-6xl">
-              Enterprise treasury with{" "}
-              <span className="text-cyan-400">trusted AI agents</span>
-            </h1>
-            <p className="mt-6 text-lg text-slate-400 leading-relaxed">
-              Sentinel Treasury combines GPT-4.1 multi-agent orchestration with Terminal 3
-              verifiable identity and delegation — so autonomous payments are authorized,
-              auditable, and on-chain accountable.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" asChild>
-                <Link href="/demo">
-                  Start Live Demo <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/dashboard">Open Dashboard</Link>
-              </Button>
-            </div>
-          </div>
+      <AetherFlowHero />
 
-          <div className="mt-16 grid gap-4 sm:grid-cols-3">
+      <section className="border-t border-slate-800/80 bg-[#070B14]">
+        <div className="mx-auto max-w-6xl px-4 py-12 lg:px-8">
+          <div className="grid gap-4 sm:grid-cols-3">
             {[
               { icon: Bot, label: "4 AI Agents", sub: "Orchestrated pipeline" },
               { icon: Shield, label: "T3 Protected", sub: "Identity + delegation" },
