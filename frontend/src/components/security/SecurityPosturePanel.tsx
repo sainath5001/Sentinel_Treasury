@@ -24,7 +24,7 @@ export function SecurityPosturePanel() {
           {POLICY_THRESHOLDS.map((tier) => (
             <div
               key={tier.range}
-              className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/40 px-3 py-2"
+              className="flex items-center justify-between rounded-lg border border-violet-500/15 bg-black/50 px-3 py-2"
             >
               <span className="font-mono text-xs text-slate-300">{tier.range}</span>
               <Badge
@@ -50,9 +50,9 @@ export function SecurityPosturePanel() {
             {SECURITY_CONTROLS.slice(0, 6).map((item) => (
               <div
                 key={item.control}
-                className="flex items-start gap-2 rounded-lg border border-slate-800/80 bg-slate-950/30 p-2.5"
+                className="flex items-start gap-2 rounded-lg border border-violet-500/15 bg-black/50 p-2.5"
               >
-                <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400" />
+                <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-violet-300" />
                 <div>
                   <p className="text-xs font-medium text-slate-200">{item.control}</p>
                   <p className="text-[10px] text-slate-500">{item.detail}</p>

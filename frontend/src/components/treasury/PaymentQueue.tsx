@@ -36,7 +36,7 @@ export function PaymentQueue({ limit = 5 }: { limit?: number }) {
             {active.map((req) => (
               <div
                 key={req.id.toString()}
-                className="flex items-center justify-between gap-4 rounded-lg border border-slate-800 bg-slate-950/40 p-4"
+                className="flex items-center justify-between gap-4 rounded-lg border border-violet-500/15 bg-black/50 p-4"
               >
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">

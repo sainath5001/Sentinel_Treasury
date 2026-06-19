@@ -3,14 +3,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-cyan-500 text-slate-950 hover:bg-cyan-400",
-        secondary: "bg-slate-800 text-slate-100 hover:bg-slate-700 border border-slate-700",
-        outline: "border border-slate-700 bg-transparent hover:bg-slate-800/80 text-slate-100",
-        ghost: "hover:bg-slate-800/80 text-slate-300 hover:text-slate-100",
+        default: "border-0 bg-[#BF80FF] text-slate-950 hover:bg-[#C896FF]",
+        secondary: "bg-black/50 text-slate-100 hover:bg-black/80 border border-violet-500/20",
+        outline:
+          "border border-slate-600 bg-black/50 text-slate-100 backdrop-blur-sm hover:bg-black/80 hover:border-violet-500/30",
+        ghost: "hover:bg-violet-500/10 text-slate-300 hover:text-violet-200",
         destructive: "bg-red-600/90 text-white hover:bg-red-500",
         success: "bg-emerald-600/90 text-white hover:bg-emerald-500",
       },

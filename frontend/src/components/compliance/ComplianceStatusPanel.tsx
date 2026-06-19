@@ -68,7 +68,7 @@ export function ComplianceStatusPanel() {
           {metrics.map((metric) => (
             <div
               key={metric.label}
-              className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/40 px-4 py-3"
+              className="flex items-center justify-between rounded-lg border border-violet-500/15 bg-black/50 px-4 py-3"
             >
               <div className="flex items-center gap-2">
                 {metric.status === "pass" ? (

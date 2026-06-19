@@ -29,16 +29,16 @@ export function DashboardShell({ title, description, children }: DashboardShellP
   const pathname = usePathname();
 
   return (
-    <div className="flex min-h-screen bg-[#070B14]">
+    <div className="flex min-h-screen bg-black">
       <Sidebar />
 
       {mobileOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div className="absolute inset-0 bg-black/60" onClick={() => setMobileOpen(false)} />
-          <div className="absolute left-0 top-0 h-full w-72 border-r border-slate-800 bg-slate-950 p-4">
+          <div className="absolute left-0 top-0 h-full w-72 border-r border-violet-500/10 bg-black p-4">
             <div className="mb-6 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-cyan-400" />
+                <Shield className="h-5 w-5 text-violet-300" />
                 <span className="font-semibold text-slate-100">Sentinel</span>
               </div>
               <button onClick={() => setMobileOpen(false)} className="text-slate-400">
@@ -53,7 +53,7 @@ export function DashboardShell({ title, description, children }: DashboardShellP
                   onClick={() => setMobileOpen(false)}
                   className={cn(
                     "flex items-center gap-3 rounded-lg px-3 py-2 text-sm",
-                    pathname === href ? "bg-cyan-500/10 text-cyan-300" : "text-slate-400",
+                    pathname === href ? "bg-violet-500/10 text-violet-300" : "text-slate-400",
                   )}
                 >
                   <Icon className="h-4 w-4" />

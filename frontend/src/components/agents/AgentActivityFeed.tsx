@@ -103,7 +103,7 @@ export function AgentActivityFeed({ limit = 8 }: { limit?: number }) {
           <div className="space-y-4">
             {sorted.map((activity) => (
               <div key={activity.id} className="flex gap-3">
-                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-800 border border-slate-700">
+                <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-500/20 bg-black/50">
                   <AgentIcon agent={activity.agent} status={activity.status} />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -125,7 +125,7 @@ export function AgentActivityFeed({ limit = 8 }: { limit?: number }) {
 
 function AgentIcon({ agent, status }: { agent: string; status: AgentActivity["status"] }) {
   if (status === "pending") return <Clock className="h-4 w-4 text-amber-400" />;
-  if (agent.includes("Compliance")) return <ShieldCheck className="h-4 w-4 text-cyan-400" />;
+  if (agent.includes("Compliance")) return <ShieldCheck className="h-4 w-4 text-violet-300" />;
   if (agent.includes("Approval")) return <UserCheck className="h-4 w-4 text-violet-400" />;
   if (status === "failed") return <Bot className="h-4 w-4 text-red-400" />;
   return <CheckCircle2 className="h-4 w-4 text-emerald-400" />;

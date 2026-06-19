@@ -30,7 +30,7 @@ export function TransactionHistory({ limit }: { limit?: number }) {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-slate-800 text-left text-slate-500">
+                <tr className="border-b border-violet-500/15 text-left text-slate-500">
                   <th className="pb-3 pr-4 font-medium">ID</th>
                   <th className="pb-3 pr-4 font-medium">Recipient</th>
                   <th className="pb-3 pr-4 font-medium">Amount</th>
@@ -41,7 +41,7 @@ export function TransactionHistory({ limit }: { limit?: number }) {
               </thead>
               <tbody>
                 {items.map((req) => (
-                  <tr key={req.id.toString()} className="border-b border-slate-800/50">
+                  <tr key={req.id.toString()} className="border-b border-violet-500/10">
                     <td className="py-3 pr-4 text-slate-200">#{req.id.toString()}</td>
                     <td className="py-3 pr-4 font-mono text-xs text-slate-400">
                       {shortenAddress(req.recipient)}
@@ -61,7 +61,7 @@ export function TransactionHistory({ limit }: { limit?: number }) {
                           href={`${EXPLORER_URL}/address/${req.recipient}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-cyan-400 hover:text-cyan-300"
+                          className="text-violet-300 hover:text-violet-200"
                         >
                           <ExternalLink className="h-4 w-4" />
                         </a>

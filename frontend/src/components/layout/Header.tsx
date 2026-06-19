@@ -12,7 +12,7 @@ interface HeaderProps {
 
 export function Header({ title, description, onMenuClick }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-slate-800/80 bg-slate-950/80 px-4 backdrop-blur-md lg:px-8">
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-violet-500/10 bg-black/70 px-4 backdrop-blur-md lg:px-8">
       <div className="flex items-center gap-3">
         <Button variant="ghost" size="icon" className="lg:hidden" onClick={onMenuClick}>
           <Menu className="h-5 w-5" />

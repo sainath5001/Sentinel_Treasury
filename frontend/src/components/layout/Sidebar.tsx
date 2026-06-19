@@ -28,10 +28,10 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden lg:flex w-64 shrink-0 flex-col border-r border-slate-800/80 bg-slate-950/50">
-      <div className="flex h-16 items-center gap-3 border-b border-slate-800/80 px-6">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-500/10 border border-cyan-500/30">
-          <Shield className="h-5 w-5 text-cyan-400" />
+    <aside className="hidden lg:flex w-64 shrink-0 flex-col border-r border-violet-500/10 bg-black/70 backdrop-blur-md">
+      <div className="flex h-16 items-center gap-3 border-b border-violet-500/10 px-6">
+        <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-violet-500/30 bg-violet-500/10">
+          <Shield className="h-5 w-5 text-violet-300" />
         </div>
         <div>
           <p className="text-sm font-semibold text-slate-50">Sentinel Treasury</p>
@@ -49,8 +49,8 @@ export function Sidebar() {
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                 active
-                  ? "bg-cyan-500/10 text-cyan-300 border border-cyan-500/20"
-                  : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-100",
+                  ? "border border-violet-500/20 bg-violet-500/10 text-violet-300"
+                  : "text-slate-400 hover:bg-violet-500/10 hover:text-violet-200",
               )}
             >
               <Icon className="h-4 w-4" />
@@ -60,17 +60,17 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="border-t border-slate-800/80 p-4 space-y-3">
-        <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
-          <p className="text-xs font-medium text-cyan-400">Terminal 3</p>
-          <p className="mt-1 text-[10px] text-slate-400 leading-relaxed">
+      <div className="space-y-3 border-t border-violet-500/10 p-4">
+        <div className="rounded-lg border border-violet-500/20 bg-violet-500/5 p-3">
+          <p className="text-xs font-medium text-violet-300">Terminal 3</p>
+          <p className="mt-1 text-[10px] leading-relaxed text-slate-400">
             Identity → Authorization → Protected Action → Audit
           </p>
         </div>
-        <div className="rounded-lg border border-slate-800 bg-slate-900/50 p-3">
+        <div className="rounded-lg border border-violet-500/15 bg-black/50 p-3">
           <p className="text-xs font-medium text-slate-400">Network</p>
           <p className="mt-1 text-sm text-slate-200">Ethereum Sepolia</p>
-          <p className="mt-2 text-xs text-emerald-400">● Contracts verified</p>
+          <p className="mt-2 text-xs text-violet-300">● Contracts verified</p>
         </div>
       </div>
     </aside>
