@@ -1,11 +1,10 @@
-import Link from "next/link";
 import { Bot, Shield, Vault } from "lucide-react";
 import { MarketingShell } from "@/components/marketing/MarketingShell";
 import { TrustStrip } from "@/components/marketing/TrustStrip";
 import { PipelineDiagram } from "@/components/marketing/PipelineDiagram";
 import { PlatformFeaturesSection } from "@/components/marketing/PlatformFeaturesSection";
+import { DemoDisperseSection } from "@/components/marketing/DemoDisperseSection";
 import { AetherFlowHero } from "@/components/ui/aether-flow-hero";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function LandingPage() {
@@ -54,24 +53,7 @@ export default function LandingPage() {
 
       <PlatformFeaturesSection />
 
-      {/* CTA */}
-      <section className="mx-auto max-w-6xl px-4 py-20 lg:px-8">
-        <div className="rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 via-slate-950 to-emerald-500/5 p-8 text-center lg:p-12">
-          <h2 className="text-2xl font-bold text-slate-50">Ready for the judge demo?</h2>
-          <p className="mx-auto mt-3 max-w-xl text-slate-400">
-            15-minute walkthrough covering T3 identity, AI pipeline, on-chain execution,
-            kill switch, and audit trail.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button size="lg" asChild>
-              <Link href="/demo">Demo Walkthrough</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/architecture">View Architecture</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <DemoDisperseSection />
     </MarketingShell>
   );
 }
